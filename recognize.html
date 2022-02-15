@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.png') }}">
+    <title>Assamese Number Recogniser</title>
+</head>
+<body>
+    <div>
+        <h1><center>Assamese Number Recogniser</center></h1>
+        
+    </div>
+    <div id="results-container">
+        <h2><center>Our Algorithm found:</center></h2>
+        <div id="results-col-wrapper">
+            <img class="results-col" src={{image}}></img>
+            <div class="results-col">
+                <div id="objects-list">
+                    <span><h4>Prediction:{{predictions}}</h4></span>
+                    <span><h3>In English:{{eng}}</h3></span>
+                    {% if prob>c %}
+                        <span style="color:green"><h3>Probability:{{'%0.2f' | format(prob)}}%</h3></span>
+                        <span style="color:green"><center>High probability!! Result is most likely right.</center></span> 
+                    {% else %}
+                        <span style="color:red"><h3>Probability:{{'%0.2f' | format(prob)}}%</h3></span>
+                        <span style="color:red"><center>Low probability! Result might be wrong!! Use a relevent, better quality image.</center></span> 
+                    {% endif %}         
+                </div>
+            </div>
+        </div>
+    </div>
+    <span><a href="https://assamese-num-recog.azurewebsites.net/">Go back to Home</a>
+</body>
+</html>

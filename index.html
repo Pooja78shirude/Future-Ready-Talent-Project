@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.png') }}">
+    <title>Assamese Number Recogniser</title>
+    
+</head>
+<body>
+    <div>
+        <h1><center>Handwritten Assamese Number Recogniser</center></h1>
+                 
+        
+    </div>
+    <div id="file-container">
+        <form action="/recognize" method="POST" enctype="multipart/form-data">
+            <div>
+                <input type="file" name="image" id="file-input">
+                <span>Maximum file size: 4 MB</span>
+                <span>Format: jpg, png, bmp, or gif.</span>
+                <br>
+                <span>Please use Images containing</span>
+                <span>single digit number with</span>
+                <span>white/light background.</span>
+                <span><a href="https://github.com/H1mJT/Assamese-Numbers-Recogniser/tree/main/Images/Test"target="_blank">Sample images to use</a>
+                <br>
+                
+            </div>
+            
+            <input type="submit" value="Submit" id="submit-input">
+        </form>
+    </div>
+    <span style="color:red"><center><b>{{res}}</b></center></span>
+    <div id="footer">
+        
+    </div>
+</body>
+</html>
